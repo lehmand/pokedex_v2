@@ -1,7 +1,6 @@
 const pokemonData = [];
 function init(){
     fetchPokemonData();
-    debugger;
 }
 
 const fetchPokemonData = async () => {
@@ -32,8 +31,8 @@ const fetchPokemonDetails = async (pokemon) => {
             height: pokemonDetails.height,
             weigth: pokemonDetails.weight,
             image: pokemonDetails.sprites.other['official-artwork'].front_default,
-            types: pokemonDetails.types.map(types => types.type.name),
-            abilities: pokemonDetails.abilities.map(abilities => abilities.ability.name),
+            types: pokemonDetails.types.map(type => type.type.name),
+            abilities: pokemonDetails.abilities.map(ability => ability.ability.name),
             stats: pokemonDetails.stats.map(stat => {
                 return {
                     name: stat.stat.name,
