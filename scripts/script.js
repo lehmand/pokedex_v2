@@ -1,6 +1,7 @@
 const pokemonData = [];
 function init(){
     fetchPokemonData();
+    debugger;
 }
 
 const fetchPokemonData = async () => {
@@ -18,7 +19,7 @@ const processPokemonData = async (pokemonList) => {
         const pokemonInfo = await fetchPokemonDetails(pokemon);
         await addPokemonDetailsToGlobal(pokemonInfo);
     }
-    renderPokemons()
+    renderPokemons();
 }
 
 const fetchPokemonDetails = async (pokemon) => {
@@ -33,7 +34,12 @@ const fetchPokemonDetails = async (pokemon) => {
             image: pokemonDetails.sprites.other['official-artwork'].front_default,
             types: pokemonDetails.types.map(types => types.type.name),
             abilities: pokemonDetails.abilities.map(abilities => abilities.ability.name),
-            stats: pokemonDetails.stats.map(stats => stats)
+            stats: pokemonDetails.stats.map(stat => {
+                return {
+                    name: stat.stat.name,
+                    value: stat.base_stat
+                };
+            })
         }
     } catch(error){
         console.log('Could not load pokemon details', error);
