@@ -1,4 +1,7 @@
 const pokemonData = [];
+function init(){
+    fetchPokemonData();
+}
 
 const fetchPokemonData = async () => {
     try {
@@ -15,6 +18,7 @@ const processPokemonData = async (pokemonList) => {
         const pokemonInfo = await fetchPokemonDetails(pokemon);
         await addPokemonDetailsToGlobal(pokemonInfo);
     }
+    renderPokemons()
 }
 
 const fetchPokemonDetails = async (pokemon) => {
@@ -45,7 +49,8 @@ const addPokemonDetailsToGlobal = async (pokemonInfo) => {
 function renderPokemons(){
     let content = document.getElementById('pokemon-list');
     content.innerHTML = '';
-    for(let i = 0; i < pokemonData; i++){
-        content.innerHTML = 
+    for(let i = 0; i < pokemonData.length; i++){
+        let currentPokemon = pokemonData[i];
+        content.innerHTML += pokemonListTemplate(currentPokemon);
     } 
 }
