@@ -21,10 +21,9 @@ const fetchPokemonDetails = async (pokemon) => {
     try {
         const response = await fetch(pokemon.url);
         const pokemonDetails = await response.json();
-        console.log(pokemonDetails);
         return {
             id: pokemonDetails.id,
-            name: pokemon.name,
+            name: (pokemon.name).charAt(0).toUpperCase() + (pokemon.name).slice(1),
             height: pokemonDetails.height,
             weigth: pokemonDetails.weight,
             image: pokemonDetails.sprites.other['official-artwork'].front_default,
@@ -43,5 +42,10 @@ const addPokemonDetailsToGlobal = async (pokemonInfo) => {
     }
 }
 
-
-fetchPokemonData();
+function renderPokemons(){
+    let content = document.getElementById('pokemon-list');
+    content.innerHTML = '';
+    for(let i = 0; i < pokemonData; i++){
+        content.innerHTML = 
+    } 
+}

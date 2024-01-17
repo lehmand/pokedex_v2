@@ -8,11 +8,16 @@
     <link rel="stylesheet" href="./styles/fonts.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">    
 </head>
-<body>
+<body onload="fetchPokemonData();">
     <header>
         <h1>Pokedex</h1>
+        <input 
+        type="text" 
+        class="input-field"
+        placeholder="Search pokemon by name...">
     </header>
-    <div id="content"></div>
+    <div id="pokemon-list"></div>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/templates.js"></script>
 </body>
 </html>
