@@ -31,7 +31,7 @@ const fetchPokemonDetails = async (pokemon) => {
             height: pokemonDetails.height,
             weigth: pokemonDetails.weight,
             image: pokemonDetails.sprites.other['official-artwork'].front_default,
-            types: pokemonDetails.types.map(types => types.type.name),
+            types: pokemonDetails.types.map(types => (types.type.name).charAt(0).toUpperCase() + (types.type.name).slice(1)),
             abilities: pokemonDetails.abilities.map(abilities => abilities.ability.name),
             stats: pokemonDetails.stats.map(stats => stats)
         }
@@ -53,4 +53,9 @@ function renderPokemons(){
         let currentPokemon = pokemonData[i];
         content.innerHTML += pokemonListTemplate(currentPokemon);
     } 
+}
+
+function pokemonHasTwoTypes(typesArray){
+    return typesArray.length == 2;
+
 }
