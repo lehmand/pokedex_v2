@@ -25,6 +25,7 @@ const fetchPokemonDetails = async (pokemon) => {
     try {
         const response = await fetch(pokemon.url);
         const pokemonDetails = await response.json();
+        console.log(pokemonDetails);
         return {
             id: pokemonDetails.id,
             name: (pokemon.name).charAt(0).toUpperCase() + (pokemon.name).slice(1),
@@ -33,7 +34,12 @@ const fetchPokemonDetails = async (pokemon) => {
             image: pokemonDetails.sprites.other['official-artwork'].front_default,
             types: pokemonDetails.types.map(types => (types.type.name).charAt(0).toUpperCase() + (types.type.name).slice(1)),
             abilities: pokemonDetails.abilities.map(abilities => abilities.ability.name),
-            stats: pokemonDetails.stats.map(stats => stats)
+            stats: pokemonDetails.stats.map(stats => {
+                return {
+                    name: stats.stat.name,
+                    value: stats.base_stat
+                }
+            })
         }
     } catch(error){
         console.log('Could not load pokemon details', error);
