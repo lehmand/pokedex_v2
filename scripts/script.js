@@ -1,4 +1,47 @@
 const pokemonData = [];
+
+let typeColors = {
+    normal: "#A8A77A",
+    fire: "#EE8130",
+    water: "#6390F0",
+    electric: "#F7D02C",
+    grass: "#7AC74C",
+    ice: "#96D9D6",
+    fighting: "#C22E28",
+    poison: "#A33EA1",
+    ground: "#E2BF65",
+    flying: "#A98FF3",
+    psychic: "#F95587",
+    bug: "#A6B91A",
+    rock: "#B6A136",
+    ghost: "#735797",
+    dragon: "#6F35FC",
+    dark: "#705746",
+    steel: "#B7B7CE",
+    fairy: "#D685AD",
+};
+
+let typeColorsLowerAlpha = {
+    normal: "#a8a77a84",
+    fire: "#ee823086",
+    water: "#6390f07f",
+    electric: "#f7ce2c84",
+    grass: "#79c74c7f",
+    ice: "#96d9d684",
+    fighting: "#c22d287b",
+    poison: "#a33ea17c",
+    ground: "#e2bf6581",
+    flying: "#aa8ff385",
+    psychic: "#f955867c",
+    bug: "#a6b91a7e",
+    rock: "#b6a13682",
+    ghost: "#73579788",
+    dragon: "#6d35fc85",
+    dark: "#70574681",
+    steel: "#b7b7ce7c",
+    fairy: "#d685ad84",
+};
+
 function init(){
     fetchPokemonData();
 }
@@ -25,7 +68,6 @@ const fetchPokemonDetails = async (pokemon) => {
     try {
         const response = await fetch(pokemon.url);
         const pokemonDetails = await response.json();
-        console.log(pokemonDetails);
         return {
             id: pokemonDetails.id,
             name: (pokemon.name).charAt(0).toUpperCase() + (pokemon.name).slice(1),
@@ -57,11 +99,21 @@ function renderPokemons(){
     content.innerHTML = '';
     for(let i = 0; i < pokemonData.length; i++){
         let currentPokemon = pokemonData[i];
-        content.innerHTML += pokemonListTemplate(currentPokemon);
+        content.innerHTML += pokemonListTemplate(currentPokemon, i);
+        addBackgroundColor(currentPokemon, i);
     } 
 }
 
 function pokemonHasTwoTypes(typesArray){
     return typesArray.length == 2;
 
+}
+
+function addBackgroundColor(currentPokemon, i){
+    let type = currentPokemon.types[0].toLowerCase();
+    let pokemonCard = document.getElementById(`pokemonID${i}`);
+    let backgroundColor = typeColorsLowerAlpha[type];    
+    pokemonCard.style.backgroundColor = backgroundColor;
+
+    changeTypeColor(currentPokemon.id, currentPokemon.types);
 }
