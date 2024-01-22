@@ -42,6 +42,7 @@ function detailCardHTML(index){
     let image = pokemonData[index].image;
     let types = pokemonData[index].types;
     let abilities = pokemonData[index].abilities;
+    let stats = pokemonData[index].stats;
     return /*html*/`
         <div class="pokemon-detail-card-wrapper">
             <div class="pokemon-detail-card" id="pokemon-detail-card-id${id}">
@@ -73,7 +74,12 @@ function detailCardHTML(index){
                     </div>
                     <h2 class="basestats-headline">Base Stats</h2>
                     <div class="pokemon-detail-card-basestats-wrapper">
-
+                        <span class="basestat">HP</span>
+                        <span class="basestat">ATK</span>
+                        <span class="basestat">DEF</span>
+                        <span class="basestat">SATK</span>
+                        <span class="basestat">SDEF</span>
+                        <span class="basestat">SPD</span>
                     </div>
                 </div>
             </div>
