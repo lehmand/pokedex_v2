@@ -49,9 +49,9 @@ function init(){
     fetchPokemonData();
 }
 
-const fetchPokemonData = async () => {
+const fetchPokemonData = async (offset) => {
     try {
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=${limit}`);
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`);
         const data = await response.json();
         await processPokemonData(data.results);
     } catch(error){
@@ -136,3 +136,7 @@ function changeTypeColor(id, types){
 
 }
 
+async function loadMorePokemons(){
+    offset += 20;
+    await fetchPokemonData(offset);
+}
