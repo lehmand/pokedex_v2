@@ -136,6 +136,9 @@ function changeTypeColor(id, types){
 
 }
 
+function showDetailCard(id){
+}
+
 async function loadMorePokemons(){
     offset += 20;
     await fetchPokemonData(offset);

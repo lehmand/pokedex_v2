@@ -6,7 +6,7 @@ function pokemonListTemplate(currentPokemon, i) {
     
     if(pokemonHasTwoTypes(types)){
         return /*html*/`
-            <div class="pokemon-card" id="pokemonID${i}">
+            <div class="pokemon-card" id="pokemonID${i}" onclick="showDetailCard(${i})">
                 <div class="pokemon-card-header">
                     <h1 class="pokemon-name">${name}</h1>
                     <span class="pokemon-id">#${id}</span>

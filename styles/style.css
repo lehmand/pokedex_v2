@@ -6,6 +6,7 @@
 
 header {
     text-align: center;
+    background-color: red;
 }
 
 h1 {
@@ -18,6 +19,14 @@ input {
     padding: 4px 8px;
     border-radius: 8px;
     border: 1px solid rgba(0, 0, 0, 0.308);
+}
+
+input:focus {
+    outline: none;
+}
+
+.d-none {
+    display: none;
 }
 
 #pokemon-list {
@@ -34,6 +43,7 @@ input {
     padding: 16px;
     width: 256px;
     min-width: 224px;
+    cursor: pointer;
 }
 
 .pokemon-card-header {
@@ -53,6 +63,7 @@ input {
 
 .pokemon-image {
     max-height: 192px;
+    filter: drop-shadow(4px 5px 5px);
 }
 
 .pokemon-id {
@@ -65,6 +76,7 @@ input {
 
 .pokemon-types-wrapper {
     text-align: center;
+    padding: 8px 0;
 }
 
 .pokemon-type {
@@ -74,6 +86,7 @@ input {
     background-color: rgba(255, 255, 255, 0.212);
     padding: 8px;
     border-radius: 16px;
+    color: white;
 }
 
 .pokemon-image-wrapper {
@@ -84,4 +97,24 @@ input {
 .button-wrapper {
     display: flex;
     justify-content: center;
+}
+
+.load-more-button {
+    border: 1px solid rgba(0, 0, 0, 0.199);
+    border-radius: 8px;
+    background-color: white;
+    padding: 8px 16px;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 8px;
+}
+
+#pokemon-detail-card-background {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.26);
+    height: 100vh;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
 }
