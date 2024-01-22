@@ -138,7 +138,11 @@ function changeTypeColor(id, types){
 
 function showDetailCard(id){
     let background = document.getElementById('pokemon-detail-card-background');
-    
+    let pokemonCard = document.getElementById(`pokemonID${id}`);
+
+    background.classList.remove('d-none');
+    background.innerHTML = '';
+    background.innerHTML = detailCardHTML(id);
 }
 
 async function loadMorePokemons(){

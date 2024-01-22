@@ -22,7 +22,7 @@ function pokemonListTemplate(currentPokemon, i) {
         `
     } else {
         return /*html*/`
-            <div class="pokemon-card" id="pokemonID${i}">
+            <div class="pokemon-card" id="pokemonID${i}" onclick="showDetailCard(${i})">
                 <div class="pokemon-card-header">
                     <h1 class="pokemon-name">${name}</h1>
                     <span class="pokemon-id">#${id}</span>
@@ -34,6 +34,18 @@ function pokemonListTemplate(currentPokemon, i) {
             </div>
         `
     }
+}
+
+function detailCardHTML(id){
+    return /*html*/`
+        <div class="pokemon-detail-card-wrapper">
+            <div class="pokemon-detail-card">
+                <div class="pokemon-detail-card-header">
+                    
+                </div>
+            </div>
+        </div>
+    `
 }
 
 
