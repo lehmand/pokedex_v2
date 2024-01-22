@@ -1,5 +1,8 @@
 const pokemonData = [];
 
+let limit = 20;
+let offset = 0;
+
 let typeColors = {
     normal: "#A8A77A",
     fire: "#EE8130",
@@ -48,7 +51,7 @@ function init(){
 
 const fetchPokemonData = async () => {
     try {
-        const response = await fetch('https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20');
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=${limit}`);
         const data = await response.json();
         await processPokemonData(data.results);
     } catch(error){
@@ -132,3 +135,4 @@ function changeTypeColor(id, types){
     }
 
 }
+
