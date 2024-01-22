@@ -95,6 +95,7 @@ const addPokemonDetailsToGlobal = async (pokemonInfo) => {
     if(pokemonInfo){
         pokemonData.push(pokemonInfo);
     }
+    showDetailCard(0)
 }
 
 function renderPokemons(){
@@ -104,7 +105,7 @@ function renderPokemons(){
         let currentPokemon = pokemonData[i];
         content.innerHTML += pokemonListTemplate(currentPokemon, i);
         addBackgroundColor(currentPokemon, i);
-    } 
+    }
 }
 
 function pokemonHasTwoTypes(typesArray){
@@ -136,13 +137,12 @@ function changeTypeColor(id, types){
 
 }
 
-function showDetailCard(id){
+function showDetailCard(index){
     let background = document.getElementById('pokemon-detail-card-background');
-    let pokemonCard = document.getElementById(`pokemonID${id}`);
-
     background.classList.remove('d-none');
+
     background.innerHTML = '';
-    background.innerHTML = detailCardHTML(id);
+    background.innerHTML = detailCardHTML(index);
 }
 
 async function loadMorePokemons(){

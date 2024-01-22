@@ -118,3 +118,10 @@ input:focus {
     bottom: 0px;
     left: 0px;
 }
+
+.pokemon-detail-card-wrapper {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
