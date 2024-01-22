@@ -117,3 +117,18 @@ function addBackgroundColor(currentPokemon, i){
 
     changeTypeColor(currentPokemon.id, currentPokemon.types);
 }
+
+function changeTypeColor(id, types){
+    let type1 = types[0].toLowerCase();
+    let type1Div = document.getElementById(`pokemon-type0${id}`);
+    let type1BackgroundColor = typeColors[type1];
+    type1Div.style.backgroundColor = type1BackgroundColor;
+
+    if(pokemonHasTwoTypes(types)){
+        let type2 = types[1].toLowerCase();
+        let type2Div = document.getElementById(`pokemon-type${id}`);
+        let type2BackgroundColor = typeColors[type2];
+        type2Div.style.backgroundColor = type2BackgroundColor;
+    }
+
+}
