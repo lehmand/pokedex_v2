@@ -78,7 +78,7 @@ const fetchPokemonDetails = async (pokemon) => {
             weigth: pokemonDetails.weight,
             image: pokemonDetails.sprites.other['official-artwork'].front_default,
             types: pokemonDetails.types.map(types => (types.type.name).charAt(0).toUpperCase() + (types.type.name).slice(1)),
-            abilities: pokemonDetails.abilities.map(abilities => abilities.ability.name),
+            abilities: pokemonDetails.abilities.map(abilities => (abilities.ability.name).charAt(0).toUpperCase() + (abilities.ability.name).slice(1)),
             stats: pokemonDetails.stats.map(stats => {
                 return {
                     name: (stats.stat.name).toUpperCase(),
