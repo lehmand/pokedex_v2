@@ -43,10 +43,13 @@ function detailCardHTML(index){
     let types = pokemonData[index].types;
     let abilities = pokemonData[index].abilities;
     let stats = pokemonData[index].stats;
+    let weight = pokemonData[index].weight;
+    let height = pokemonData[index].height
     return /*html*/`
         <div class="pokemon-detail-card-wrapper">
             <div class="pokemon-detail-card" id="pokemon-detail-card-id${id}">
                 <div class="pokemon-detail-card-header">
+                    <img src="./assets/icons/arrow_back.svg" alt="" class="pokemon-detail-card-closebutton">
                     <h1 class="pokemon-detail-card-name">${name}</h1>
                     <span class="pokemon-detail-card-id">#${id}</span>
                 </div>
@@ -64,6 +67,7 @@ function detailCardHTML(index){
                         <div class="pokemon-detail-card-biometric-info">
                             <div class="pokemon-detail-card-biometric-headline">
                                 <img src="./assets/icons/weight.svg" alt="" class="pokemon-detail-card-biometric-symbol">
+                                <span class="pokemon-weight">${weight}</span>
                             </div>
                             <span class="pokemon-detail-card-biometric">Weight</span>
                         </div>
@@ -71,6 +75,7 @@ function detailCardHTML(index){
                         <div class="pokemon-detail-card-biometric-info">
                             <div class="pokemon-detail-card-biometric-headline">
                                 <img src="./assets/icons/straighten.svg" alt="" class="pokemon-detail-card-biometric-symbol straigthen">
+                                <span class="pokemon-weight">${height}</span>
                             </div>
                             <span class="pokemon-detail-card-biometric">Height</span>
                         </div>
@@ -94,34 +99,56 @@ function detailCardHTML(index){
                             <span class="basestat-name">SPD</span>
                         </div>             
                         <div class="pokemon-detail-card-basestats-vertical-line"></div>
-                        <div class="pokemon-detail-card-basestats-value-wrap">                            
-                            <span class="basestat-value">${stats[0].value}</span>
-                            <span class="basestat-value">${stats[1].value}</span>
-                            <span class="basestat-value">${stats[2].value}</span>
-                            <span class="basestat-value">${stats[3].value}</span>
-                            <span class="basestat-value">${stats[4].value}</span>
-                            <span class="basestat-value">${stats[5].value}</span>
-                        </div>
-                        <div class="pokemon-detail-card-basestats-progressbar-wrapper">
-                            <div class="pokemon-detail-card-basestats-progressbar-wrap">
-                                <div class="progress-bar-background"></div>
+                        <div class="pokemon-detail-card-basestats-value-wrapper">
+                            <div class="pokemon-detail-card-basestats-value-wrap">
+                                <span class="basestat-value">${stats[0].value}</span>
+                                <div class="pokemon-detail-card-basestats-progressbar-wrap">
+                                    <div class="progress-bar-background">
+                                    <div class="progress-bar-value" style="width:${stats[0].value}%"></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="pokemon-detail-card-basestats-progressbar-wrap">
-                                
+                            <div class="pokemon-detail-card-basestats-value-wrap">
+                                <span class="basestat-value">${stats[1].value}</span>
+                                <div class="pokemon-detail-card-basestats-progressbar-wrap">
+                                    <div class="progress-bar-background">
+                                    <div class="progress-bar-value" style="width:${stats[1].value}%"></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="pokemon-detail-card-basestats-progressbar-wrap">
-                                
+                            <div class="pokemon-detail-card-basestats-value-wrap">
+                                <span class="basestat-value">${stats[2].value}</span>
+                                <div class="pokemon-detail-card-basestats-progressbar-wrap">
+                                    <div class="progress-bar-background">
+                                    <div class="progress-bar-value" style="width:${stats[2].value}%"></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="pokemon-detail-card-basestats-progressbar-wrap">
-                                
+                            <div class="pokemon-detail-card-basestats-value-wrap">
+                                <span class="basestat-value">${stats[3].value}</span>
+                                <div class="pokemon-detail-card-basestats-progressbar-wrap">
+                                    <div class="progress-bar-background">
+                                    <div class="progress-bar-value" style="width:${stats[3].value}%"></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="pokemon-detail-card-basestats-progressbar-wrap">
-                                
+                            <div class="pokemon-detail-card-basestats-value-wrap">
+                                <span class="basestat-value">${stats[4].value}</span>
+                                <div class="pokemon-detail-card-basestats-progressbar-wrap">
+                                    <div class="progress-bar-background">
+                                    <div class="progress-bar-value" style="width:${stats[4].value}%"></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="pokemon-detail-card-basestats-progressbar-wrap">
-                                
+                            <div class="pokemon-detail-card-basestats-value-wrap">
+                                <span class="basestat-value">${stats[5].value}</span>
+                                <div class="pokemon-detail-card-basestats-progressbar-wrap">
+                                    <div class="progress-bar-background">
+                                        <div class="progress-bar-value" style="width:${stats[5].value}%"></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </div>                        
                     </div>
                 </div>
             </div>

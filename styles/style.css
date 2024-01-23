@@ -133,6 +133,8 @@ input:focus {
 .pokemon-detail-card-header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 8px;
 }
 
 .pokemon-detail-card-image {
@@ -144,7 +146,7 @@ input:focus {
 }
 
 .pokemon-detail-card-pokeball {
-    position: fixed;
+    position: absolute;
     height: 256px;
     opacity: 0.6;
     right: 768px;    
@@ -174,7 +176,7 @@ input:focus {
 
 .pokemon-detail-card-biometrics-wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .pokemon-detail-card-biometric-info {
@@ -184,8 +186,18 @@ input:focus {
     align-items: center;
 }
 
+.pokemon-detail-card-biometric-headline {
+    display: flex;
+    align-items: center;
+}
+
 .straigthen {
     transform: rotate(90deg);
+}
+
+.pokemon-weight,
+.pokemon-height {
+    padding: 16px;
 }
 
 .about-section-vertical-line {
@@ -201,6 +213,7 @@ input:focus {
 .pokemon-detail-card-movenames-wrap {
     display: flex;
     flex-direction: column;
+    padding: 6px 0;
 }
 
 .pokemon-detail-card-basestats-headline {
@@ -210,16 +223,36 @@ input:focus {
 
 .pokemon-detail-card-basestats-wrapper {
     display: flex;
+    justify-content: space-evenly;
 }
 
 .pokemon-detail-card-basestats-vertical-line {
     border: 1.5px solid rgba(0, 0, 0, 0.192);
     border-radius: 8px;
-    margin: 0 16px;
+    margin: 0 4px;
 }
 
 .pokemon-detail-card-basestats-names-wrap,
-.pokemon-detail-card-basestats-value-wrap {
+.pokemon-detail-card-basestats-value-wrapper {
     display: flex;
     flex-direction: column;
+}
+
+.pokemon-detail-card-basestats-value-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.progress-bar-background {
+    height: 8px;
+    background-color: rgba(0, 0, 0, 0.13);
+    width: 192px;
+    border-radius: 2px;
+    margin-left: 8px;
+}
+
+.progress-bar-value {
+    height: 100%;
+    background-color: blue;
+    border-radius: 8px;
 }
