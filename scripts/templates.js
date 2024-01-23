@@ -52,6 +52,7 @@ function detailCardHTML(index){
                 </div>
                 <div class="pokemon-detail-card-image-wrapper">
                     <img src="${image}" class="pokemon-detail-card-image">
+                    <img src="./assets/icons/pokeball.svg" alt="" class="pokemon-detail-card-pokeball">
                 </div>
                 <div class="pokemon-detail-card-info-wrapper">
                     <div class="pokemon-detail-card-types-wrapper">

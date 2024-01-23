@@ -140,6 +140,15 @@ input:focus {
     margin: 0 64px;
     position: relative;
     top: 90px;
+    z-index: 1;
+}
+
+.pokemon-detail-card-pokeball {
+    position: absolute;
+    height: 256px;
+    opacity: 0.6;
+    right: 396px;
+    
 }
 
 .pokemon-detail-card-info-wrapper {
@@ -161,4 +170,5 @@ input:focus {
 
 .pokemon-detail-card-about-headline {
     text-align: center;
+    padding-top: 16px;
 }
