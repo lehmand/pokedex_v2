@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins';
 }
 
 header {
@@ -213,7 +214,8 @@ input:focus {
 .pokemon-detail-card-movenames-wrap {
     display: flex;
     flex-direction: column;
-    padding: 6px 0;
+    padding: 3px 0;
+    align-items: center;
 }
 
 .pokemon-detail-card-basestats-headline {

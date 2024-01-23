@@ -95,7 +95,7 @@ const addPokemonDetailsToGlobal = async (pokemonInfo) => {
     if(pokemonInfo){
         pokemonData.push(pokemonInfo);
     }
-    showDetailCard(0)
+    // showDetailCard(0)
 }
 
 function renderPokemons(){
@@ -140,12 +140,16 @@ function changeTypeColor(id, types){
 function showDetailCard(index){
     let background = document.getElementById('pokemon-detail-card-background');
     background.classList.remove('d-none');
-
     background.innerHTML = '';
     background.innerHTML = detailCardHTML(index);
+
+    changeColorsOfDetailCard(index);
 }
 
 async function loadMorePokemons(){
     offset += 20;
     await fetchPokemonData(offset);
 }
+
+
+changeColorsOfDetailCard(index)
