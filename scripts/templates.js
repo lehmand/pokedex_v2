@@ -1,12 +1,11 @@
 function pokemonListTemplate(currentPokemon, i) {
+    let typeArr = currentPokemon.types;
     let name = currentPokemon.name;
     let image = currentPokemon.image;
     let id = currentPokemon.id;
-    let types = currentPokemon.types;
     
-    if(pokemonHasTwoTypes(types)){
         return /*html*/`
-            <div class="pokemon-card" id="pokemonID${i}" onclick="showDetailCard(${i})">
+            <div class="pokemon-card" id="pokemonID${i}" onclick="showDetailCard(${id}, ${i})">
                 <div class="pokemon-card-header">
                     <h1 class="pokemon-name">${name}</h1>
                     <span class="pokemon-id">#${id}</span>
@@ -14,26 +13,8 @@ function pokemonListTemplate(currentPokemon, i) {
                 <div class="pokemon-image-wrapper">
                     <img src="${image}" class="pokemon-image" alt="pokemon-image">
                 </div>
-                <div class="pokemon-types-wrapper">
-                    <span class="pokemon-type" id="pokemon-type0${id}">${types[0]}</span>
-                    <span class="pokemon-type" id="pokemon-type${id}">${types[1]}</span>
-                </div>
             </div>
         `
-    } else {
-        return /*html*/`
-            <div class="pokemon-card" id="pokemonID${i}" onclick="showDetailCard(${i})">
-                <div class="pokemon-card-header">
-                    <h1 class="pokemon-name">${name}</h1>
-                    <span class="pokemon-id">#${id}</span>
-                </div>
-                <img src="${image}" class="pokemon-image" alt="pokemon-image">
-                <div class="pokemon-types-wrapper">
-                    <span class="pokemon-type" id="pokemon-type0${id}" >${types[0]}</span>
-                </div>
-            </div>
-        `
-    }
 }
 
 function detailCardHTML(index){
@@ -61,10 +42,10 @@ function detailCardHTML(index){
                 </div>
                 <div class="pokemon-detail-card-info-wrapper">
                     <div class="pokemon-detail-card-types-wrapper">
-                        <span class="pokemon-detail-card-type">${types[0]}</span>
-                        <span class="pokemon-detail-card-type">${types[1]}</span>
+                        <span class="pokemon-detail-card-type" id="pokemon-type0${id}">${types[0]}</span>
+                        <span class="pokemon-detail-card-type" id="pokemon-type${id}${id}">${types[1]}</span>
                     </div>
-                    <h2 class="pokemon-detail-card-about-headline">About</h2>
+                    <h2 class="pokemon-detail-card-about-headline" id="pokemon-detail-about-headline-id${id}">About</h2>
                     <div class="pokemon-detail-card-biometrics-wrapper">
                         <div class="pokemon-detail-card-biometric-info">
                             <div class="pokemon-detail-card-biometric-headline">
@@ -90,7 +71,7 @@ function detailCardHTML(index){
                             <span class="pokemon-detail-card-biometric">Moves</span>
                         </div>
                     </div>
-                    <h2 class="pokemon-detail-card-basestats-headline">Base Stats</h2>
+                    <h2 class="pokemon-detail-card-basestats-headline" id="pokemon-detail-basestats-headline-id${id}">Base Stats</h2>
                     <div class="pokemon-detail-card-basestats-wrapper">
                         <div class="pokemon-detail-card-basestats-names-wrap">
                             <span class="basestat-name">HP</span>
@@ -161,7 +142,7 @@ function detailCardHTML(index){
         <div class="pokemon-detail-card-wrapper">
             <div class="pokemon-detail-card" id="pokemon-detail-card-id${index}">
                 <div class="pokemon-detail-card-header">
-                    <img src="./assets/icons/arrow_back.svg" alt="" class="pokemon-detail-card-closebutton">
+                    <img src="./assets/icons/arrow_back.svg" onclick="closeDetails()"class="pokemon-detail-card-closebutton">
                     <h1 class="pokemon-detail-card-name">${name}</h1>
                     <span class="pokemon-detail-card-id">#${id}</span>
                 </div>
@@ -171,9 +152,9 @@ function detailCardHTML(index){
                 </div>
                 <div class="pokemon-detail-card-info-wrapper">
                     <div class="pokemon-detail-card-types-wrapper">
-                        <span class="pokemon-detail-card-type">${types[0]}</span>
+                    <span class="pokemon-detail-card-type" id="pokemon-type0${id}">${types[0]}</span>
                     </div>
-                    <h2 class="pokemon-detail-card-about-headline">About</h2>
+                    <h2 class="pokemon-detail-card-about-headline" id="pokemon-detail-about-headline-id${id}">About</h2>
                     <div class="pokemon-detail-card-biometrics-wrapper">
                         <div class="pokemon-detail-card-biometric-info">
                             <div class="pokemon-detail-card-biometric-headline">
@@ -199,7 +180,7 @@ function detailCardHTML(index){
                             <span class="pokemon-detail-card-biometric">Moves</span>
                         </div>
                     </div>
-                    <h2 class="pokemon-detail-card-basestats-headline">Base Stats</h2>
+                    <h2 class="pokemon-detail-card-basestats-headline" id="pokemon-detail-basestats-headline-id${id}">Base Stats</h2>
                     <div class="pokemon-detail-card-basestats-wrapper">
                         <div class="pokemon-detail-card-basestats-names-wrap">
                             <span class="basestat-name">HP</span>

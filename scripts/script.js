@@ -83,7 +83,7 @@ function renderPokemons(){
     for(let i = 0; i < pokemonData.length; i++){
         let currentPokemon = pokemonData[i];
         content.innerHTML += pokemonListTemplate(currentPokemon, i);
-        changeTypeColor(currentPokemon.id, currentPokemon.types);
+        addBackgroundColor(currentPokemon, i);
     }
 }
 
@@ -92,34 +92,25 @@ function pokemonHasTwoTypes(typesArray){
 
 }
 
-function changeTypeColor(id, types){
-    let type1 = types[0].toLowerCase();
-    let type1Div = document.getElementById(`pokemon-type0${id}`);
-    let type1BackgroundColor = typeColors[type1];
-    type1Div.style.backgroundColor = type1BackgroundColor;
-
-    if(pokemonHasTwoTypes(types)){
-        let type2 = types[1].toLowerCase();
-        let type2Div = document.getElementById(`pokemon-type${id}`);
-        let type2BackgroundColor = typeColors[type2];
-        type2Div.style.backgroundColor = type2BackgroundColor;
-    }
-
+function addBackgroundColor(currentPokemon, i){
+    let type = currentPokemon.types[0].toLowerCase();
+    let pokemonCard = document.getElementById(`pokemonID${i}`);
+    let backgroundColor = typeColors[type];    
+    pokemonCard.style.backgroundColor = backgroundColor;
 }
 
-function showDetailCard(index){
+function showDetailCard(id, index){
     let background = document.getElementById('pokemon-detail-card-background');
     background.classList.remove('d-none');
     background.innerHTML = '';
     background.innerHTML = detailCardHTML(index);
 
-    changeColorsOfDetailCard(index);
+    changeColorsOfDetailCard(id, index);
 }
 
 function closeDetails(){
     let background = document.getElementById('pokemon-detail-card-background');
     background.classList.add('d-none');
-
 }
 
 async function loadMorePokemons(){
@@ -128,10 +119,30 @@ async function loadMorePokemons(){
 }
 
 
-function changeColorsOfDetailCard(index){
+function changeColorsOfDetailCard(id, index){
     let card = document.getElementById(`pokemon-detail-card-id${index}`)
     let type1 = pokemonData[index].types[0].toLowerCase();
     let backgroundColor = typeColors[type1];
-
     card.style.backgroundColor = backgroundColor;
+
+    changeTypeColor(id, index);
+}
+
+function changeTypeColor(id, index){
+    let typeArr = pokemonData[index].types;
+    let type1 = pokemonData[index].types[0].toLowerCase();
+    let type1Div = document.getElementById(`pokemon-type0${id}`);
+    let aboutHeadline = document.getElementById(`pokemon-detail-about-headline-id${id}`);
+    let basestatsHeadline = document.getElementById(`pokemon-detail-basestats-headline-id${id}`);
+    let backgroundColor = typeColors[type1];
+    aboutHeadline.style.color = backgroundColor;
+    basestatsHeadline.style.color = backgroundColor;
+    type1Div.style.backgroundColor = backgroundColor;
+
+    if(pokemonHasTwoTypes(typeArr)){
+        let type2 = pokemonData[index].types[1].toLowerCase();
+        let type2Div = document.getElementById(`pokemon-type${id}${id}`);
+        let backgroundColor = typeColors[type2];
+        type2Div.style.backgroundColor = backgroundColor;
+    }
 }
