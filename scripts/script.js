@@ -74,7 +74,7 @@ const addPokemonDetailsToGlobal = async (pokemonInfo) => {
     if(pokemonInfo){
         pokemonData.push(pokemonInfo);
     }
-    // showDetailCard(0)
+    showDetailCard(1, 0)
 }
 
 function renderPokemons(){
@@ -144,5 +144,19 @@ function changeTypeColor(id, index){
         let type2Div = document.getElementById(`pokemon-type${id}${id}`);
         let backgroundColor = typeColors[type2];
         type2Div.style.backgroundColor = backgroundColor;
+    }
+
+    changeProgressBarColor(id, typeArr);
+}
+
+function changeProgressBarColor(id, typeArr){
+    let type1 = typeArr[0].toLowerCase();
+    let bar = document.getElementsByClassName(`bar-value${id}`);
+    let statName = document.getElementsByClassName(`basestat-name${id}`);
+    let backgroundColors = typeColors[type1];
+
+    for(let i = 0; i < bar.length; i++){
+        bar[i].style.backgroundColor = backgroundColors;
+        statName[i].style.color = backgroundColors;
     }
 }

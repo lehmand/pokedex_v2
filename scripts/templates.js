@@ -74,12 +74,12 @@ function detailCardHTML(index){
                     <h2 class="pokemon-detail-card-basestats-headline" id="pokemon-detail-basestats-headline-id${id}">Base Stats</h2>
                     <div class="pokemon-detail-card-basestats-wrapper">
                         <div class="pokemon-detail-card-basestats-names-wrap">
-                            <span class="basestat-name">HP</span>
-                            <span class="basestat-name">ATK</span>
-                            <span class="basestat-name">DEF</span>
-                            <span class="basestat-name">SATK</span>
-                            <span class="basestat-name">SDEF</span>
-                            <span class="basestat-name">SPD</span>
+                            <span class="basestat-name basestat-name${id}">HP</span>
+                            <span class="basestat-name basestat-name${id}">ATK</span>
+                            <span class="basestat-name basestat-name${id}">DEF</span>
+                            <span class="basestat-name basestat-name${id}">SATK</span>
+                            <span class="basestat-name basestat-name${id}">SDEF</span>
+                            <span class="basestat-name basestat-name${id}">SPD</span>
                         </div>             
                         <div class="pokemon-detail-card-basestats-vertical-line"></div>
                         <div class="pokemon-detail-card-basestats-value-wrapper">
@@ -87,7 +87,7 @@ function detailCardHTML(index){
                                 <span class="basestat-value">${stats[0].value}</span>
                                 <div class="pokemon-detail-card-basestats-progressbar-wrap">
                                     <div class="progress-bar-background">
-                                    <div class="progress-bar-value" style="width:${stats[0].value}%"></div>
+                                    <div class="progress-bar-value bar-value${id}" style="width:${stats[0].value}%"></div>
                                     </div>
                                 </div>
                             </div>
@@ -95,7 +95,7 @@ function detailCardHTML(index){
                                 <span class="basestat-value">${stats[1].value}</span>
                                 <div class="pokemon-detail-card-basestats-progressbar-wrap">
                                     <div class="progress-bar-background">
-                                    <div class="progress-bar-value" style="width:${stats[1].value}%"></div>
+                                    <div class="progress-bar-value bar-value${id}" style="width:${stats[1].value}%"></div>
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +103,7 @@ function detailCardHTML(index){
                                 <span class="basestat-value">${stats[2].value}</span>
                                 <div class="pokemon-detail-card-basestats-progressbar-wrap">
                                     <div class="progress-bar-background">
-                                    <div class="progress-bar-value" style="width:${stats[2].value}%"></div>
+                                    <div class="progress-bar-value bar-value${id}" style="width:${stats[2].value}%"></div>
                                     </div>
                                 </div>
                             </div>
@@ -111,7 +111,7 @@ function detailCardHTML(index){
                                 <span class="basestat-value">${stats[3].value}</span>
                                 <div class="pokemon-detail-card-basestats-progressbar-wrap">
                                     <div class="progress-bar-background">
-                                    <div class="progress-bar-value" style="width:${stats[3].value}%"></div>
+                                    <div class="progress-bar-value bar-value${id}" style="width:${stats[3].value}%"></div>
                                     </div>
                                 </div>
                             </div>
@@ -119,7 +119,7 @@ function detailCardHTML(index){
                                 <span class="basestat-value">${stats[4].value}</span>
                                 <div class="pokemon-detail-card-basestats-progressbar-wrap">
                                     <div class="progress-bar-background">
-                                    <div class="progress-bar-value" style="width:${stats[4].value}%"></div>
+                                    <div class="progress-bar-value bar-value${id}" style="width:${stats[4].value}%"></div>
                                     </div>
                                 </div>
                             </div>
@@ -127,7 +127,7 @@ function detailCardHTML(index){
                                 <span class="basestat-value">${stats[5].value}</span>
                                 <div class="pokemon-detail-card-basestats-progressbar-wrap">
                                     <div class="progress-bar-background">
-                                        <div class="progress-bar-value" style="width:${stats[5].value}%"></div>
+                                        <div class="progress-bar-value bar-value${id}" style="width:${stats[5].value}%"></div>
                                     </div>
                                 </div>
                             </div>
@@ -183,12 +183,12 @@ function detailCardHTML(index){
                     <h2 class="pokemon-detail-card-basestats-headline" id="pokemon-detail-basestats-headline-id${id}">Base Stats</h2>
                     <div class="pokemon-detail-card-basestats-wrapper">
                         <div class="pokemon-detail-card-basestats-names-wrap">
-                            <span class="basestat-name">HP</span>
-                            <span class="basestat-name">ATK</span>
-                            <span class="basestat-name">DEF</span>
-                            <span class="basestat-name">SATK</span>
-                            <span class="basestat-name">SDEF</span>
-                            <span class="basestat-name">SPD</span>
+                            <span class="basestat-name basestat-name${id}">HP</span>
+                            <span class="basestat-name basestat-name${id}">ATK</span>
+                            <span class="basestat-name basestat-name${id}">DEF</span>
+                            <span class="basestat-name basestat-name${id}">SATK</span>
+                            <span class="basestat-name basestat-name${id}">SDEF</span>
+                            <span class="basestat-name basestat-name${id}">SPD</span>
                         </div>             
                         <div class="pokemon-detail-card-basestats-vertical-line"></div>
                         <div class="pokemon-detail-card-basestats-value-wrapper">
@@ -196,7 +196,7 @@ function detailCardHTML(index){
                                 <span class="basestat-value">${stats[0].value}</span>
                                 <div class="pokemon-detail-card-basestats-progressbar-wrap">
                                     <div class="progress-bar-background">
-                                    <div class="progress-bar-value" style="width:${stats[0].value}%"></div>
+                                    <div class="progress-bar-value bar-value${id}" style="width:${stats[0].value}%"></div>
                                     </div>
                                 </div>
                             </div>
@@ -204,7 +204,7 @@ function detailCardHTML(index){
                                 <span class="basestat-value">${stats[1].value}</span>
                                 <div class="pokemon-detail-card-basestats-progressbar-wrap">
                                     <div class="progress-bar-background">
-                                    <div class="progress-bar-value" style="width:${stats[1].value}%"></div>
+                                    <div class="progress-bar-value bar-value${id}" style="width:${stats[1].value}%"></div>
                                     </div>
                                 </div>
                             </div>
@@ -212,7 +212,7 @@ function detailCardHTML(index){
                                 <span class="basestat-value">${stats[2].value}</span>
                                 <div class="pokemon-detail-card-basestats-progressbar-wrap">
                                     <div class="progress-bar-background">
-                                    <div class="progress-bar-value" style="width:${stats[2].value}%"></div>
+                                    <div class="progress-bar-value bar-value${id}" style="width:${stats[2].value}%"></div>
                                     </div>
                                 </div>
                             </div>
@@ -220,7 +220,7 @@ function detailCardHTML(index){
                                 <span class="basestat-value">${stats[3].value}</span>
                                 <div class="pokemon-detail-card-basestats-progressbar-wrap">
                                     <div class="progress-bar-background">
-                                    <div class="progress-bar-value" style="width:${stats[3].value}%"></div>
+                                    <div class="progress-bar-value bar-value${id}" style="width:${stats[3].value}%"></div>
                                     </div>
                                 </div>
                             </div>
@@ -228,7 +228,7 @@ function detailCardHTML(index){
                                 <span class="basestat-value">${stats[4].value}</span>
                                 <div class="pokemon-detail-card-basestats-progressbar-wrap">
                                     <div class="progress-bar-background">
-                                    <div class="progress-bar-value" style="width:${stats[4].value}%"></div>
+                                    <div class="progress-bar-value bar-value${id}" style="width:${stats[4].value}%"></div>
                                     </div>
                                 </div>
                             </div>
@@ -236,7 +236,7 @@ function detailCardHTML(index){
                                 <span class="basestat-value">${stats[5].value}</span>
                                 <div class="pokemon-detail-card-basestats-progressbar-wrap">
                                     <div class="progress-bar-background">
-                                        <div class="progress-bar-value" style="width:${stats[5].value}%"></div>
+                                        <div class="progress-bar-value bar-value${id}" style="width:${stats[5].value}%"></div>
                                     </div>
                                 </div>
                             </div>

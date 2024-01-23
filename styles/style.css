@@ -261,7 +261,7 @@ input:focus {
 
 .progress-bar-value {
     height: 100%;
-    background-color: blue;
+    /* background-color: blue; */
     border-radius: 8px;
 }
 
