@@ -24,27 +24,6 @@ let typeColors = {
     fairy: "#D685AD",
 };
 
-let typeColorsLowerAlpha = {
-    normal: "#a8a77a84",
-    fire: "#ee823086",
-    water: "#6390f07f",
-    electric: "#f7ce2c84",
-    grass: "#79c74c7f",
-    ice: "#96d9d684",
-    fighting: "#c22d287b",
-    poison: "#a33ea17c",
-    ground: "#e2bf6581",
-    flying: "#aa8ff385",
-    psychic: "#f955867c",
-    bug: "#a6b91a7e",
-    rock: "#b6a13682",
-    ghost: "#73579788",
-    dragon: "#6d35fc85",
-    dark: "#70574681",
-    steel: "#b7b7ce7c",
-    fairy: "#d685ad84",
-};
-
 function init(){
     fetchPokemonData();
 }
@@ -104,22 +83,13 @@ function renderPokemons(){
     for(let i = 0; i < pokemonData.length; i++){
         let currentPokemon = pokemonData[i];
         content.innerHTML += pokemonListTemplate(currentPokemon, i);
-        addBackgroundColor(currentPokemon, i);
+        changeTypeColor(currentPokemon.id, currentPokemon.types);
     }
 }
 
 function pokemonHasTwoTypes(typesArray){
     return typesArray.length == 2;
 
-}
-
-function addBackgroundColor(currentPokemon, i){
-    let type = currentPokemon.types[0].toLowerCase();
-    let pokemonCard = document.getElementById(`pokemonID${i}`);
-    let backgroundColor = typeColorsLowerAlpha[type];    
-    pokemonCard.style.backgroundColor = backgroundColor;
-
-    changeTypeColor(currentPokemon.id, currentPokemon.types);
 }
 
 function changeTypeColor(id, types){
@@ -146,10 +116,22 @@ function showDetailCard(index){
     changeColorsOfDetailCard(index);
 }
 
+function closeDetails(){
+    let background = document.getElementById('pokemon-detail-card-background');
+    background.classList.add('d-none');
+
+}
+
 async function loadMorePokemons(){
     offset += 20;
     await fetchPokemonData(offset);
 }
 
 
-changeColorsOfDetailCard(index)
+function changeColorsOfDetailCard(index){
+    let card = document.getElementById(`pokemon-detail-card-id${index}`)
+    let type1 = pokemonData[index].types[0].toLowerCase();
+    let backgroundColor = typeColors[type1];
+
+    card.style.backgroundColor = backgroundColor;
+}

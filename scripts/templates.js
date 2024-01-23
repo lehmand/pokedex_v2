@@ -49,9 +49,9 @@ function detailCardHTML(index){
     if(pokemonHasTwoTypes(types)){
         return /*html*/`
         <div class="pokemon-detail-card-wrapper">
-            <div class="pokemon-detail-card" id="pokemon-detail-card-id${id}">
+            <div class="pokemon-detail-card" id="pokemon-detail-card-id${index}">
                 <div class="pokemon-detail-card-header">
-                    <img src="./assets/icons/arrow_back.svg" alt="" class="pokemon-detail-card-closebutton">
+                    <img src="./assets/icons/arrow_back.svg" onclick="closeDetails()" class="pokemon-detail-card-closebutton">
                     <h1 class="pokemon-detail-card-name">${name}</h1>
                     <span class="pokemon-detail-card-id">#${id}</span>
                 </div>
@@ -159,7 +159,7 @@ function detailCardHTML(index){
     } else {
         return /*html*/`
         <div class="pokemon-detail-card-wrapper">
-            <div class="pokemon-detail-card" id="pokemon-detail-card-id${id}">
+            <div class="pokemon-detail-card" id="pokemon-detail-card-id${index}">
                 <div class="pokemon-detail-card-header">
                     <img src="./assets/icons/arrow_back.svg" alt="" class="pokemon-detail-card-closebutton">
                     <h1 class="pokemon-detail-card-name">${name}</h1>
