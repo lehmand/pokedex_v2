@@ -81,7 +81,7 @@ const fetchPokemonDetails = async (pokemon) => {
             abilities: pokemonDetails.abilities.map(abilities => abilities.ability.name),
             stats: pokemonDetails.stats.map(stats => {
                 return {
-                    name: stats.stat.name,
+                    name: (stats.stat.name).toUpperCase(),
                     value: stats.base_stat
                 }
             })

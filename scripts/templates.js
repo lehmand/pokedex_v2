@@ -58,28 +58,52 @@ function detailCardHTML(index){
                         <span class="pokemon-detail-card-type">${types[0]}</span>
                         <span class="pokemon-detail-card-type">${types[1]}</span>
                     </div>
-                    <h2 class="about-headline">About</h2>
+                    <h2 class="pokemon-detail-card-about-headline">About</h2>
                     <div class="pokemon-detail-card-biometrics-wrapper">
                         <div class="pokemon-detail-card-biometric-info">
                             <span class="pokemon-detail-card-biometric">Weigth</span>
                         </div>
-                        <div class="vertical-line"></div>
+                        <div class="about-section-vertical-line"></div>
                         <div class="pokemon-detail-card-biometric-info">
                             <span class="pokemon-detail-card-biometric">Height</span>
                         </div>
-                        <div class="vertical-line"></div>
+                        <div class="about-section-vertical-line"></div>
                         <div class="pokemon-detail-card-biometric-info">
                             <span class="pokemon-detail-card-biometric">Moves</span>
                         </div>
                     </div>
                     <h2 class="basestats-headline">Base Stats</h2>
                     <div class="pokemon-detail-card-basestats-wrapper">
-                        <span class="basestat">HP</span>
-                        <span class="basestat">ATK</span>
-                        <span class="basestat">DEF</span>
-                        <span class="basestat">SATK</span>
-                        <span class="basestat">SDEF</span>
-                        <span class="basestat">SPD</span>
+                        <div class="pokemon-detail-card-basestat-wrap">
+                            <span class="basestat-name">HP</span>
+                            <div class="base-stats-vertical-line"></div>
+                            <span class="basestat-value">${stats[0].value}</span>
+                        </div>
+                        <div class="pokemon-detail-card-basestat-wrap">
+                            <span class="basestat">ATK</span>
+                            <div class="base-stats-vertical-line"></div>
+                            <span class="basestat-value">${stats[1].value}</span>
+                        </div>
+                        <div class="pokemon-detail-card-basestat-wrap">
+                            <span class="basestat">DEF</span>
+                            <div class="base-stats-vertical-line"></div>
+                            <span class="basestat-value">${stats[2].value}</span>
+                        </div>
+                        <div class="pokemon-detail-card-basestat-wrap">
+                            <span class="basestat">SATK</span>
+                            <div class="base-stats-vertical-line"></div>
+                            <span class="basestat-value">${stats[3].value}</span>
+                        </div>
+                        <div class="pokemon-detail-card-basestat-wrap">
+                            <span class="basestat">SDEF</span>
+                            <div class="base-stats-vertical-line"></div>
+                            <span class="basestat-value">${stats[4].value}</span>
+                        </div>
+                        <div class="pokemon-detail-card-basestat-wrap">
+                            <span class="basestat">SPD</span>
+                            <div class="base-stats-vertical-line"></div>
+                            <span class="basestat-value">${stats[5].value}</span>
+                        </div>
                     </div>
                 </div>
             </div>
