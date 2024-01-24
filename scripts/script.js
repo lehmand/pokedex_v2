@@ -26,6 +26,7 @@ let typeColors = {
 
 function init(){
     fetchPokemonData();
+    document.getElementById('search-value').addEventListener('input', searchPokemon);
 }
 
 const fetchPokemonData = async (offset) => {
@@ -160,3 +161,20 @@ function changeProgressBarColor(id, typeArr){
         statName[i].style.color = backgroundColors;
     }
 }
+
+function searchPokemon() {
+    const searchTerm = document.getElementById('search-value').value.toLowerCase();
+    let filteredPokemonData = pokemonData.filter(pokemon => pokemon.name.toLowerCase().includes(searchTerm));
+    renderFilteredPokemons(filteredPokemonData);
+  }
+  
+  function renderFilteredPokemons(filteredPokemonData) {
+    let content = document.getElementById('pokemon-list');
+    content.innerHTML = '';
+    for (let i = 0; i < filteredPokemonData.length; i++) {
+      let currentPokemon = filteredPokemonData[i];
+      content.innerHTML += pokemonListTemplate(currentPokemon, i);
+      addBackgroundColor(currentPokemon, i);
+    }
+  }
+  
