@@ -36,9 +36,9 @@ function detailCardHTML(index){
                     <h1 class="pokemon-detail-card-name">${name}</h1>
                     <span class="pokemon-detail-card-id">#${id}</span>
                 </div>
+                <img src="./assets/icons/pokeball.svg" alt="" class="pokemon-detail-card-pokeball">
                 <div class="pokemon-detail-card-image-wrapper">
                     <img src="${image}" class="pokemon-detail-card-image">
-                    <img src="./assets/icons/pokeball.svg" alt="" class="pokemon-detail-card-pokeball">
                 </div>
                 <div class="pokemon-detail-card-info-wrapper">
                     <div class="pokemon-detail-card-types-wrapper">
@@ -47,22 +47,20 @@ function detailCardHTML(index){
                     </div>
                     <h2 class="pokemon-detail-card-about-headline" id="pokemon-detail-about-headline-id${id}">About</h2>
                     <div class="pokemon-detail-card-biometrics-wrapper">
-                        <div class="pokemon-detail-card-biometric-info">
+                        <div class="pokemon-detail-card-biometric-info biometric-weight">
                             <div class="pokemon-detail-card-biometric-headline">
                                 <img src="./assets/icons/weight.svg" alt="" class="pokemon-detail-card-biometric-symbol">
-                                <span class="pokemon-weight">${weight}</span>
-                            </div>
+                                <span class="pokemon-weight pokemon-bio">${weight}</span>
+                                </div>
                             <span class="pokemon-detail-card-biometric">Weight</span>
                         </div>
-                        <div class="about-section-vertical-line"></div>
-                        <div class="pokemon-detail-card-biometric-info">
+                        <div class="pokemon-detail-card-biometric-info biometric-border">
                             <div class="pokemon-detail-card-biometric-headline">
                                 <img src="./assets/icons/straighten.svg" alt="" class="pokemon-detail-card-biometric-symbol straigthen">
-                                <span class="pokemon-weight">${height}</span>
+                                <span class="pokemon-height pokemon-bio">${height}</span>
                             </div>
                             <span class="pokemon-detail-card-biometric">Height</span>
                         </div>
-                        <div class="about-section-vertical-line"></div>
                         <div class="pokemon-detail-card-biometric-info">
                             <div class="pokemon-detail-card-movenames-wrap">
                                 <span class="pokemon-detail-card-move">${abilities[0]}</span>
@@ -142,36 +140,34 @@ function detailCardHTML(index){
         <div class="pokemon-detail-card-wrapper">
             <div class="pokemon-detail-card" id="pokemon-detail-card-id${index}">
                 <div class="pokemon-detail-card-header">
-                    <img src="./assets/icons/arrow_back.svg" onclick="closeDetails()"class="pokemon-detail-card-closebutton">
+                    <img src="./assets/icons/arrow_back.svg" onclick="closeDetails()" class="pokemon-detail-card-closebutton">
                     <h1 class="pokemon-detail-card-name">${name}</h1>
                     <span class="pokemon-detail-card-id">#${id}</span>
                 </div>
+                <img src="./assets/icons/pokeball.svg" alt="" class="pokemon-detail-card-pokeball">
                 <div class="pokemon-detail-card-image-wrapper">
                     <img src="${image}" class="pokemon-detail-card-image">
-                    <img src="./assets/icons/pokeball.svg" alt="" class="pokemon-detail-card-pokeball">
                 </div>
                 <div class="pokemon-detail-card-info-wrapper">
                     <div class="pokemon-detail-card-types-wrapper">
-                    <span class="pokemon-detail-card-type" id="pokemon-type0${id}">${types[0]}</span>
+                        <span class="pokemon-detail-card-type" id="pokemon-type0${id}">${types[0]}</span>
                     </div>
                     <h2 class="pokemon-detail-card-about-headline" id="pokemon-detail-about-headline-id${id}">About</h2>
                     <div class="pokemon-detail-card-biometrics-wrapper">
                         <div class="pokemon-detail-card-biometric-info">
                             <div class="pokemon-detail-card-biometric-headline">
                                 <img src="./assets/icons/weight.svg" alt="" class="pokemon-detail-card-biometric-symbol">
-                                <span class="pokemon-weight">${weight}</span>
-                            </div>
+                                <span class="pokemon-weight pokemon-bio">${weight}</span>
+                                </div>
                             <span class="pokemon-detail-card-biometric">Weight</span>
                         </div>
-                        <div class="about-section-vertical-line"></div>
-                        <div class="pokemon-detail-card-biometric-info">
+                        <div class="pokemon-detail-card-biometric-info biometric-border">
                             <div class="pokemon-detail-card-biometric-headline">
                                 <img src="./assets/icons/straighten.svg" alt="" class="pokemon-detail-card-biometric-symbol straigthen">
-                                <span class="pokemon-weight">${height}</span>
+                                <span class="pokemon-height pokemon-bio">${height}</span>
                             </div>
                             <span class="pokemon-detail-card-biometric">Height</span>
                         </div>
-                        <div class="about-section-vertical-line"></div>
                         <div class="pokemon-detail-card-biometric-info">
                             <div class="pokemon-detail-card-movenames-wrap">
                                 <span class="pokemon-detail-card-move">${abilities[0]}</span>

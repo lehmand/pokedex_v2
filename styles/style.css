@@ -7,19 +7,29 @@
 
 header {
     text-align: center;
-    background-color: red;
+    background-color: #DC0A2D;
 }
 
 .site-headline {
     padding: 32px 0 0 0;
+}
 
+.basestat-name {
+    font-weight: bold;
+}
+
+#pokemon-list {
+    background-color: #DC0A2D;
+    margin: 8px;
+    border-radius: 8px;
 }
 
 input {
     margin: 0 0 32px 0px;
     padding: 4px 8px;
-    border-radius: 8px;
+    border-radius: 32px;
     border: 1px solid rgba(0, 0, 0, 0.308);
+    min-width: 256px;
 }
 
 input:focus {
@@ -140,20 +150,26 @@ input:focus {
     color: #ffffff;
 }
 
-.pokemon-detail-card-image {
-    height: 256px;
-    margin: 0 64px;
-    position: relative;
-    top: 90px;
-    z-index: 1;
-}
-
 .pokemon-detail-card-pokeball {
     position: absolute;
     height: 256px;
-    opacity: 0.6;
-    right: 768px;    
+    margin-left: 256px;
+    margin-top: -24px;
+    opacity: .3;
 }
+
+.pokemon-detail-card-image-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.pokemon-detail-card-image {
+    height: 256px;
+    position: relative;
+    bottom: -86px;
+    padding: 0 128px;
+}
+
 
 .pokemon-detail-card-info-wrapper {
     background-color: white;
@@ -187,30 +203,36 @@ input:focus {
 }
 
 .pokemon-detail-card-biometric-info {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+}
+
+.pokemon-detail-card-biometric {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .pokemon-detail-card-biometric-headline {
     display: flex;
+    justify-content: center;
     align-items: center;
+    margin-top: 16px;
 }
 
 .straigthen {
     transform: rotate(90deg);
 }
 
-.pokemon-weight,
-.pokemon-height {
-    padding: 16px;
+.biometric-border {
+    border-left: 1px solid rgba(0, 0, 0, 0.192);
+    border-right: 1px solid rgba(0, 0, 0, 0.192);
+    padding: 0 64px;
 }
 
-.about-section-vertical-line {
-    height: 64px;
-    border: 1.5px solid rgba(0, 0, 0, 0.192);
-    border-radius: 8px;
+.biometric-weight {
+    margin-right: 24px;
 }
 
 .pokemon-detail-card-biometric-symbol {
@@ -220,8 +242,6 @@ input:focus {
 .pokemon-detail-card-movenames-wrap {
     display: flex;
     flex-direction: column;
-    padding: 3px 0;
-    align-items: center;
 }
 
 .pokemon-detail-card-basestats-headline {
@@ -254,14 +274,13 @@ input:focus {
 .progress-bar-background {
     height: 8px;
     background-color: rgba(0, 0, 0, 0.13);
-    width: 192px;
+    width: 320px;
     border-radius: 2px;
     margin-left: 8px;
 }
 
 .progress-bar-value {
     height: 100%;
-    /* background-color: blue; */
     border-radius: 8px;
 }
 

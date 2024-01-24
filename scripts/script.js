@@ -74,7 +74,7 @@ const addPokemonDetailsToGlobal = async (pokemonInfo) => {
     if(pokemonInfo){
         pokemonData.push(pokemonInfo);
     }
-    showDetailCard(1, 0)
+    // showDetailCard(1, 0)
 }
 
 function renderPokemons(){
