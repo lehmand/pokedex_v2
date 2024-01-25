@@ -163,13 +163,17 @@ input:focus {
     justify-content: center;
 }
 
+.pokemon-detail-card-icon {
+    background-color: unset;
+    border: none;
+}
+
 .pokemon-detail-card-image {
     height: 256px;
     position: relative;
     bottom: -86px;
     padding: 0 128px;
 }
-
 
 .pokemon-detail-card-info-wrapper {
     background-color: white;

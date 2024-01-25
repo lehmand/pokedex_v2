@@ -183,3 +183,25 @@ function renderFilteredPokemon(filteredPokemon){
         addBackgroundColor(currentPokemon, i);
     }
 }
+
+function previousPokemon(id, index){
+    let button = document.getElementById('left-arrow-icon');
+    id--;
+    index--;
+    if(index < 0){
+        button.disabled = true;
+    } else {
+        showDetailCard(id, index);
+    }
+}
+
+function nextPokemon(id, index){
+    let button = document.getElementById('right-arrow-icon');
+    id++;
+    index++;
+    if(index > 150){
+        button.disabled = true;
+    } else {
+        showDetailCard(id, index);
+    }
+}

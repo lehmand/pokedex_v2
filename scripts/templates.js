@@ -1,5 +1,4 @@
 function pokemonListTemplate(currentPokemon, i) {
-    let typeArr = currentPokemon.types;
     let name = currentPokemon.name;
     let image = currentPokemon.image;
     let id = currentPokemon.id;
@@ -38,7 +37,13 @@ function detailCardHTML(index){
                 </div>
                 <img src="./assets/icons/pokeball.svg" alt="" class="pokemon-detail-card-pokeball">
                 <div class="pokemon-detail-card-image-wrapper">
+                    <button class="pokemon-detail-card-icon left-arrow-icon" id="left-arrow-icon" onclick="previousPokemon(${id},${index})">
+                        <img src="./assets/icons/chevron_left.svg">
+                    </button> 
                     <img src="${image}" class="pokemon-detail-card-image">
+                    <button class="pokemon-detail-card-icon arrow-arrow-icon" id="right-arrow-icon" onclick="nextPokemon(${id},${index})">
+                        <img src="./assets/icons/chevron_right.svg">
+                    </button>
                 </div>
                 <div class="pokemon-detail-card-info-wrapper">
                     <div class="pokemon-detail-card-types-wrapper">
@@ -146,7 +151,13 @@ function detailCardHTML(index){
                 </div>
                 <img src="./assets/icons/pokeball.svg" alt="" class="pokemon-detail-card-pokeball">
                 <div class="pokemon-detail-card-image-wrapper">
+                    <button class="pokemon-detail-card-icon left-arrow-icon" onclick="previousPokemon(${id},${index})">
+                        <img src="./assets/icons/chevron_left.svg">
+                    </button> 
                     <img src="${image}" class="pokemon-detail-card-image">
+                    <button class="pokemon-detail-card-icon arrow-arrow-icon" onclick="nextPokemon(${id},${index})">
+                        <img src="./assets/icons/chevron_right.svg">
+                    </button>
                 </div>
                 <div class="pokemon-detail-card-info-wrapper">
                     <div class="pokemon-detail-card-types-wrapper">
