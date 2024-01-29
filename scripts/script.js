@@ -1,6 +1,6 @@
 const pokemonData = [];
 
-let limit = 151;
+let limit = 20;
 let offset = 20;
 
 let typeColors = {
@@ -24,28 +24,32 @@ let typeColors = {
     fairy: "#D685AD",
 };
 
-function init(){
+function init() {
     fetchPokemonData();
-    document.getElementById('search-value').addEventListener('input', searchPokemon);
+    document
+        .getElementById("search-value")
+        .addEventListener("input", searchPokemon);
 }
 
 const fetchPokemonData = async (offset) => {
     try {
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`);
+        const response = await fetch(
+            `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=${limit}`
+        );
         const data = await response.json();
         await processPokemonData(data.results);
-    } catch(error){
-        console.error('Error, could not load pokemon data...', error);
+    } catch (error) {
+        console.error("Error, could not load pokemon data...", error);
     }
-}
+};
 
 const processPokemonData = async (pokemonList) => {
-    for(const pokemon of pokemonList){
+    for (const pokemon of pokemonList) {
         const pokemonInfo = await fetchPokemonDetails(pokemon);
         await addPokemonDetailsToGlobal(pokemonInfo);
     }
     renderPokemons();
-}
+};
 
 const fetchPokemonDetails = async (pokemon) => {
     try {
@@ -53,74 +57,83 @@ const fetchPokemonDetails = async (pokemon) => {
         const pokemonDetails = await response.json();
         return {
             id: pokemonDetails.id,
-            name: (pokemon.name).charAt(0).toUpperCase() + (pokemon.name).slice(1),
+            name: pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1),
             height: pokemonDetails.height,
             weight: pokemonDetails.weight,
-            image: pokemonDetails.sprites.other['official-artwork'].front_default,
-            types: pokemonDetails.types.map(types => (types.type.name).charAt(0).toUpperCase() + (types.type.name).slice(1)),
-            abilities: pokemonDetails.abilities.map(abilities => (abilities.ability.name).charAt(0).toUpperCase() + (abilities.ability.name).slice(1)),
-            stats: pokemonDetails.stats.map(stats => {
+            image: pokemonDetails.sprites.other["official-artwork"]
+                .front_default,
+            types: pokemonDetails.types.map(
+                (types) =>
+                    types.type.name.charAt(0).toUpperCase() +
+                    types.type.name.slice(1)
+            ),
+            abilities: pokemonDetails.abilities.map(
+                (abilities) =>
+                    abilities.ability.name.charAt(0).toUpperCase() +
+                    abilities.ability.name.slice(1)
+            ),
+            stats: pokemonDetails.stats.map((stats) => {
                 return {
-                    name: (stats.stat.name).toUpperCase(),
-                    value: stats.base_stat
-                }
-            })
-        }
-    } catch(error){
-        console.log('Could not load pokemon details', error);
+                    name: stats.stat.name.toUpperCase(),
+                    value: stats.base_stat,
+                };
+            }),
+        };
+    } catch (error) {
+        console.log("Could not load pokemon details", error);
     }
-}
+};
 
 const addPokemonDetailsToGlobal = async (pokemonInfo) => {
-    if(pokemonInfo){
+    if (pokemonInfo) {
         pokemonData.push(pokemonInfo);
     }
-}
+};
 
-function renderPokemons(){
-    let content = document.getElementById('pokemon-list');
-    content.innerHTML = '';
-    for(let i = 0; i < offset; i++){
+function renderPokemons() {
+    let content = document.getElementById("pokemon-list");
+    content.innerHTML = "";
+    for (let i = 0; i < offset; i++) {
         let currentPokemon = pokemonData[i];
         content.innerHTML += pokemonListTemplate(currentPokemon, i);
         addBackgroundColor(currentPokemon, i);
     }
 }
 
-function pokemonHasTwoTypes(typesArray){
+function pokemonHasTwoTypes(typesArray) {
     return typesArray.length == 2;
-
 }
 
-function addBackgroundColor(currentPokemon, i){
+function addBackgroundColor(currentPokemon, i) {
     let type = currentPokemon.types[0].toLowerCase();
     let pokemonCard = document.getElementById(`pokemonID${i}`);
-    let backgroundColor = typeColors[type];    
+    let backgroundColor = typeColors[type];
     pokemonCard.style.backgroundColor = backgroundColor;
 }
 
-function showDetailCard(id, index){
-    let background = document.getElementById('pokemon-detail-card-background');
-    background.classList.remove('d-none');
-    background.innerHTML = '';
+function showDetailCard(id, index) {
+    let background = document.getElementById("pokemon-detail-card-background");
+    background.classList.remove("d-none");
+    background.innerHTML = "";
     background.innerHTML = detailCardHTML(index);
 
     changeColorsOfDetailCard(id, index);
 }
 
-function closeDetails(){
-    let background = document.getElementById('pokemon-detail-card-background');
-    background.classList.add('d-none');
+function closeDetails() {
+    let background = document.getElementById("pokemon-detail-card-background");
+    background.classList.add("d-none");
 }
 
-function loadMorePokemons(){
-    offset += 20;
+function loadMorePokemons() {
+    limit = +10;
+    fetchPokemonData(offset);
+    offset += 10;
     renderPokemons();
 }
 
-
-function changeColorsOfDetailCard(id, index){
-    let card = document.getElementById(`pokemon-detail-card-id${index}`)
+function changeColorsOfDetailCard(id, index) {
+    let card = document.getElementById(`pokemon-detail-card-id${index}`);
     let type1 = pokemonData[index].types[0].toLowerCase();
     let backgroundColor = typeColors[type1];
     card.style.backgroundColor = backgroundColor;
@@ -128,14 +141,14 @@ function changeColorsOfDetailCard(id, index){
     changeTypeColor(id, index);
 }
 
-function changeTypeColor(id, index){
+function changeTypeColor(id, index) {
     let typeArr = pokemonData[index].types;
     let type1 = pokemonData[index].types[0].toLowerCase();
     let type1Div = document.getElementById(`pokemon-type0${id}`);
     let backgroundColor = typeColors[type1];
     type1Div.style.backgroundColor = backgroundColor;
 
-    if(pokemonHasTwoTypes(typeArr)){
+    if (pokemonHasTwoTypes(typeArr)) {
         let type2 = pokemonData[index].types[1].toLowerCase();
         let type2Div = document.getElementById(`pokemon-type${id}${id}`);
         let backgroundColor = typeColors[type2];
@@ -143,61 +156,69 @@ function changeTypeColor(id, index){
     }
 
     changeProgressBarColor(id, typeArr);
-    changeHeadlineColors(backgroundColor, id)
+    changeHeadlineColors(backgroundColor, id);
 }
 
-function changeHeadlineColors(backgroundColor, id){
-    let aboutHeadline = document.getElementById(`pokemon-detail-about-headline-id${id}`);
-    let basestatsHeadline = document.getElementById(`pokemon-detail-basestats-headline-id${id}`);
+function changeHeadlineColors(backgroundColor, id) {
+    let aboutHeadline = document.getElementById(
+        `pokemon-detail-about-headline-id${id}`
+    );
+    let basestatsHeadline = document.getElementById(
+        `pokemon-detail-basestats-headline-id${id}`
+    );
     aboutHeadline.style.color = backgroundColor;
     basestatsHeadline.style.color = backgroundColor;
 }
 
-function changeProgressBarColor(id, typeArr){
+function changeProgressBarColor(id, typeArr) {
     let type1 = typeArr[0].toLowerCase();
     let bar = document.getElementsByClassName(`bar-value${id}`);
     let statName = document.getElementsByClassName(`basestat-name${id}`);
     let backgroundColors = typeColors[type1];
 
-    for(let i = 0; i < bar.length; i++){
+    for (let i = 0; i < bar.length; i++) {
         bar[i].style.backgroundColor = backgroundColors;
         statName[i].style.color = backgroundColors;
     }
 }
-  
-function searchPokemon(){
-    let searchTerm = document.getElementById('search-value').value.toLowerCase();
-    let filteredPokemon = pokemonData.filter(pokemon => pokemon.name.toLowerCase().includes(searchTerm));
+
+function searchPokemon() {
+    let searchTerm = document
+        .getElementById("search-value")
+        .value.toLowerCase();
+    let filteredPokemon = pokemonData.filter((pokemon) =>
+        pokemon.name.toLowerCase().includes(searchTerm)
+    );
     renderFilteredPokemon(filteredPokemon);
 }
 
-function renderFilteredPokemon(filteredPokemon){
-    let content = document.getElementById('pokemon-list');
-    content.innerHTML = '';
+function renderFilteredPokemon(filteredPokemon) {
+    let content = document.getElementById("pokemon-list");
+    content.innerHTML = "";
 
-    for(let i = 0; i < filteredPokemon.length; i++){
+    for (let i = 0; i < filteredPokemon.length; i++) {
         let currentPokemon = filteredPokemon[i];
         content.innerHTML += pokemonListTemplate(currentPokemon, i);
         addBackgroundColor(currentPokemon, i);
     }
 }
 
-function previousPokemon(id, index){
-    let button = document.getElementById('left-arrow-icon');
+function previousPokemon(id, index) {
+    let button = document.getElementById("left-arrow-icon");
     id--;
     index--;
-    if(index < 0){
+    if (index < 0) {
         button.disabled = true;
     } else {
         showDetailCard(id, index);
     }
 }
 
-function nextPokemon(id, index){
-    let button = document.getElementById('right-arrow-icon');
+function nextPokemon(id, index) {
+    let button = document.getElementById("right-arrow-icon");
     id++;
     index++;
-    if(index > 150){
+    if (index > 150) {
         button.disabled = true;
     } else {
         showDetailCard(id, index);
