@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/fonts.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">    
-</head>
-<body onload="init()">
-    <header>
-        <h1 class="site-headline">Pokedex</h1>
-        <input 
-        type="text" 
-        class="input-field"
-        placeholder="Search pokemon by name..."
-        id="search-value"
-        onclick="searchPokemon()">
-    </header>
-    <div id="pokemon-list"></div>
-    <div class="button-wrapper">
-        <button class="load-more-button" onclick="loadMorePokemons()">Load more pokemons...</button>
-    </div>
-    <div id="pokemon-detail-card-background" class="d-none"></div>
-    <script src="./scripts/script.js"></script>
-    <script src="./scripts/templates.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pokedex</title>
+        <link rel="stylesheet" href="./styles/style.css" />
+        <link rel="stylesheet" href="./styles/fonts.css" />
+        <link
+            rel="shortcut icon"
+            href="./assets/icons/pokeball.svg"
+            type="image/x-icon"
+        />
+    </head>
+    <body onload="init()">
+        <header>
+            <h1 class="site-headline">Pokedex</h1>
+            <input
+                type="text"
+                class="input-field"
+                placeholder="Search pokemon by name..."
+                id="search-value"
+                onclick="searchPokemon()"
+            />
+        </header>
+        <div id="pokemon-list"></div>
+        <div class="button-wrapper">
+            <button class="load-more-button" onclick="loadMorePokemons()">
+                Load more pokemons...
+            </button>
+        </div>
+        <div id="pokemon-detail-card-background" class="d-none"></div>
+        <script src="./scripts/script.js"></script>
+        <script src="./scripts/templates.js"></script>
+    </body>
 </html>

@@ -25,7 +25,7 @@ let typeColors = {
 };
 
 function init(){
-    fetchPokemonData(0);
+    fetchPokemonData();
     document.getElementById('search-value').addEventListener('input', searchPokemon);
 }
 
