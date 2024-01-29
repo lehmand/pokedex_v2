@@ -218,7 +218,7 @@ function nextPokemon(id, index) {
     let button = document.getElementById("right-arrow-icon");
     id++;
     index++;
-    if (index > 150) {
+    if (index >= pokemonData.length) {
         button.disabled = true;
     } else {
         showDetailCard(id, index);
