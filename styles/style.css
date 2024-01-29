@@ -353,3 +353,73 @@ input:focus {
         font-size: 8px;
     }
 }
+
+@media(max-width: 700px) {
+    .pokemon-detail-card-image {
+        padding: 0 80px;
+    }
+}
+
+@media(max-width: 580px) {
+    .pokemon-detail-card-image {
+        padding: 0 48px;
+    }
+
+    .pokemon-detail-card-pokeball {
+        margin-left: 190px;
+    }
+}
+
+@media(max-width: 500px){
+    .progress-bar-background {
+        width: 256px;
+    }
+
+    .pokemon-detail-card-image {
+        padding: 0 16px;
+    }
+
+    .pokemon-detail-card-pokeball {
+        margin-left: 128px;
+    }
+
+    .biometric-border {
+        padding: 0 32px;
+    }
+}
+
+@media(max-width: 420px){
+    .progress-bar-background {
+        width: 192px;
+    }
+
+    .pokemon-detail-card-image {
+        height: 192px;
+    }
+
+    .pokemon-detail-card-pokeball {
+        height: 192px;
+    }
+
+    .biometric-border {
+        padding: 0 8px;
+    }
+}
+
+@media(max-width: 350px){
+    .biometric-weight {
+        margin-right: 8px;
+    }
+
+    .progress-bar-background {
+        width: 128px;
+    }
+
+    .pokemon-detail-card-image {
+        height: 160px;
+    }
+
+    .pokemon-detail-card-pokeball {
+        margin-left: 92px;
+    }
+}
