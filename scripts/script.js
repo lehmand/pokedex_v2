@@ -25,7 +25,7 @@ let typeColors = {
 };
 
 function init(){
-    fetchPokemonData();
+    fetchPokemonData(0);
     document.getElementById('search-value').addEventListener('input', searchPokemon);
 }
 
@@ -164,8 +164,6 @@ function changeProgressBarColor(id, typeArr){
         statName[i].style.color = backgroundColors;
     }
 }
-
-//TODO write a real time search function!
   
 function searchPokemon(){
     let searchTerm = document.getElementById('search-value').value.toLowerCase();
