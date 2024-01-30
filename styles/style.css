@@ -2,12 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins';
+    font-family: "Poppins";
 }
 
 header {
     text-align: center;
-    background-color: #DC0A2D;
+    background-color: #dc0a2d;
     margin: 8px;
     border-radius: 8px;
 }
@@ -21,7 +21,7 @@ header {
 }
 
 #pokemon-list {
-    background-color: #DC0A2D;
+    background-color: #dc0a2d;
     margin: 8px;
     border-radius: 8px;
     display: flex;
@@ -156,7 +156,7 @@ input:focus {
     height: 256px;
     margin-left: 256px;
     margin-top: -24px;
-    opacity: .3;
+    opacity: 0.3;
 }
 
 .pokemon-detail-card-image-wrapper {
@@ -298,12 +298,11 @@ input:focus {
 }
 
 ::-webkit-scrollbar {
-    background: #DC0A2D;
-
+    background: #dc0a2d;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #DC0A2D;
+    background: #dc0a2d;
     border-radius: 16px;
 }
 
@@ -311,21 +310,19 @@ input:focus {
     background: #ffffff;
 }
 
-
-
-@media(max-width: 612px){
+@media (max-width: 612px) {
     #pokemon-list {
         padding: 8px 16px;
     }
 }
 
-@media(max-width: 584px){
+@media (max-width: 584px) {
     #pokemon-list {
         padding: 8px;
     }
 }
 
-@media(max-width: 512px){
+@media (max-width: 512px) {
     .pokemon-image {
         height: 160px;
     }
@@ -343,7 +340,7 @@ input:focus {
     }
 }
 
-@media(max-width: 410px){
+@media (max-width: 410px) {
     .pokemon-image {
         height: 128px;
     }
@@ -357,7 +354,7 @@ input:focus {
     }
 }
 
-@media(max-width: 340px){
+@media (max-width: 340px) {
     .pokemon-image {
         height: 90px;
     }
@@ -371,13 +368,13 @@ input:focus {
     }
 }
 
-@media(max-width: 700px) {
+@media (max-width: 700px) {
     .pokemon-detail-card-image {
         padding: 0 80px;
     }
 }
 
-@media(max-width: 580px) {
+@media (max-width: 580px) {
     .pokemon-detail-card-image {
         padding: 0 48px;
     }
@@ -387,7 +384,7 @@ input:focus {
     }
 }
 
-@media(max-width: 500px){
+@media (max-width: 500px) {
     .progress-bar-background {
         width: 256px;
     }
@@ -405,7 +402,7 @@ input:focus {
     }
 }
 
-@media(max-width: 420px){
+@media (max-width: 420px) {
     .progress-bar-background {
         width: 192px;
     }
@@ -423,7 +420,7 @@ input:focus {
     }
 }
 
-@media(max-width: 350px){
+@media (max-width: 350px) {
     .biometric-weight {
         margin-right: 8px;
     }
@@ -441,7 +438,7 @@ input:focus {
     }
 }
 
-@media(max-height: 667px){
+@media (max-height: 667px) {
     .pokemon-detail-card-id {
         font-size: 28px;
     }
