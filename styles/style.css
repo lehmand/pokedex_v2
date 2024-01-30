@@ -8,6 +8,8 @@
 header {
     text-align: center;
     background-color: #DC0A2D;
+    margin: 8px;
+    border-radius: 8px;
 }
 
 .site-headline {
@@ -295,6 +297,21 @@ input:focus {
     font-size: 48px;
 }
 
+::-webkit-scrollbar {
+    background: #DC0A2D;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background: #DC0A2D;
+    border-radius: 16px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+
 
 @media(max-width: 612px){
     #pokemon-list {
@@ -421,5 +438,33 @@ input:focus {
 
     .pokemon-detail-card-pokeball {
         margin-left: 92px;
+    }
+}
+
+@media(max-height: 667px){
+    .pokemon-detail-card-id {
+        font-size: 28px;
+    }
+
+    .pokemon-detail-card-name {
+        font-size: 24px;
+    }
+
+    .pokemon-detail-card-closebutton {
+        height: 32px;
+    }
+
+    .pokemon-detail-card-image {
+        height: 156px;
+    }
+
+    .pokemon-detail-card-type {
+        font-size: 12px;
+    }
+
+    .pokemon-detail-card-about-headline,
+    .pokemon-detail-card-basestats-headline {
+        font-size: 16px;
+        margin: 8px 0;
     }
 }
