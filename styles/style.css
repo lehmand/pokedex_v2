@@ -149,6 +149,7 @@ input:focus {
 
 .pokemon-detail-card-icon {
     cursor: pointer;
+    z-index: 1;
 }
 
 .pokemon-detail-card-pokeball {
@@ -438,7 +439,7 @@ input:focus {
     }
 }
 
-@media (max-height: 667px) {
+@media (max-height: 740px) {
     .pokemon-detail-card-id {
         font-size: 28px;
     }

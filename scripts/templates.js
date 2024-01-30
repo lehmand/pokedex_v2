@@ -41,7 +41,7 @@ function detailCardHTML(index){
                         <img src="./assets/icons/chevron_left.svg">
                     </button> 
                     <img src="${image}" class="pokemon-detail-card-image">
-                    <button class="pokemon-detail-card-icon arrow-arrow-icon" id="right-arrow-icon" onclick="nextPokemon(${id},${index})">
+                    <button class="pokemon-detail-card-icon right-arrow-icon" id="right-arrow-icon" onclick="nextPokemon(${id},${index})">
                         <img src="./assets/icons/chevron_right.svg">
                     </button>
                 </div>
